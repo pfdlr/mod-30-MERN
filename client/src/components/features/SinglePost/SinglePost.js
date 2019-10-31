@@ -2,13 +2,15 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
+import PageTitle from '../../common/PageTitle/PageTitle';
+import HtmlBox from '../../common/common/HtmlBox/HtmlBox';
 
 
 class SinglePost extends React.Component {
 
   componentDidMount() {
-    const { loadPost, match } = this.props;
-    loadPost(match.params.id);
+    const { loadPost } = this.props;
+    loadPost();
   }
 
   render() {
@@ -17,7 +19,8 @@ class SinglePost extends React.Component {
     if (request.pending === false && request.success === true && posts.length > 0)
       return (
         <div>
-          {posts.content}
+          <PageTitle>{ posts[0].title }</PageTitle>
+          <HtmlBox>{ posts[0].content }</HtmlBox>
         </div>
       );
     else if (request.pending === true || request.success === null)

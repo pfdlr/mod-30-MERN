@@ -10,14 +10,15 @@ export const getSinglePost = ({ posts }) => posts.singlePost
 // action name creator
 const reducerName = 'posts';
 const createActionName = name => `app/${reducerName}/${name}`;
+
 export const startRequest = () => ({ type: START_REQUEST });
 export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
+export const loadPosts = payload => ({ payload, type: LOAD_POSTS });
 export const loadSinglePost = payload => ({ payload, type: LOAD_SINGLE_POST });
 
 /* ACTIONS */
 export const LOAD_POSTS = createActionName('LOAD_POSTS');
-export const loadPosts = payload => ({ payload, type: LOAD_POSTS });
 export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');

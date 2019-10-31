@@ -7,8 +7,8 @@ const mapStateToProps = state => ({
   request: getRequest(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  loadPost: (id) => dispatch(loadSinglePostRequest(id)),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  loadPost: () => dispatch(loadSinglePostRequest(ownProps.postId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SinglePost);
