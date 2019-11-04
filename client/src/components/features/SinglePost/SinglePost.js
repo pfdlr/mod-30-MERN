@@ -49,7 +49,7 @@ SinglePost.propTypes = {
       author: PropTypes.string.isRequired,
     })
   ),
-  loadPosts: PropTypes.func.isRequired,
+  loadPost: PropTypes.func.isRequired,
 };
 
 export default SinglePost;
