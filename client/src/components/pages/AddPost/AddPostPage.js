@@ -1,10 +1,11 @@
 import React from 'react';
-import PostForm from '../../features/PostForm/PostForm';
+import PageTitle from '../../common/PageTitle/PageTitle';
+import PostFormContainer from '../../features/PostForm/PostFormContainer';
 
 const AddPostPage = () => (
   <div>
-    <h1>Add Post</h1>
-    <PostForm />
+    <PageTitle>Add post</PageTitle>
+    <PostFormContainer />
   </div>
 );
 

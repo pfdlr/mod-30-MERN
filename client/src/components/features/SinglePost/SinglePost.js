@@ -9,8 +9,9 @@ import HtmlBox from '../../common/common/HtmlBox/HtmlBox';
 class SinglePost extends React.Component {
 
   componentDidMount() {
-    const { loadPost } = this.props;
+    const { loadPost, resetRequest } = this.props;
     loadPost();
+    resetRequest();
   }
 
   render() {
