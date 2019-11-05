@@ -1,4 +1,5 @@
 const Post = require('../models/post.model');
+const uuid = require('uuid');
 
 // get all posts
 
@@ -29,10 +30,7 @@ exports.addPost = async function (req, res) {
   try {
     const { title, author, content } = req.body;
 
-    let newPost = new Post();
-    newPost.title = title;
-    newPost.author = author;
-    newPost.content = content;
+    let newPost = new Post(req.body);
     newPost.id = uuid();
 
     postSaved = await newPost.save();
