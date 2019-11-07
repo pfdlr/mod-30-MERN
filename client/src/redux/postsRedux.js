@@ -7,6 +7,7 @@ export const getPostsCounter = ({ posts }) => posts.data.length;
 export const getRequest = ({ posts }) => posts.request;
 export const getSinglePost = ({ posts }) => posts.singlePost
 export const getPages = ({ posts }) => Math.ceil(posts.amount / posts.postsPerPage);
+export const presentPage = ({ posts }) => posts.presentPage;
 
 // action name creator
 const reducerName = 'posts';
@@ -28,6 +29,22 @@ export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const LOAD_SINGLE_POST = createActionName('LOAD_SINGLE_POST');
 export const RESET_REQUEST = createActionName('RESET_REQUEST');
 export const LOAD_POSTS_PAGE = createActionName('LOAD_POSTS_PAGE');
+
+/* INITIAL STATE */
+
+const initialState = {
+  data: [],
+  request: {
+    pending: false,
+    error: null,
+    success: null,
+  },
+  singlePost: [],
+  amount: 0,
+  postsPerPage: 3,
+  presentPage: 1,
+};
+
 
 /* THUNKS */
 /* load all posts */
@@ -80,14 +97,12 @@ export const addPostRequest = (post) => {
   };
 };
 
-export const loadPostsByPageRequest = (page) => {
+export const loadPostsByPageRequest = (page, postsPerPage) => {
   return async dispatch => {
 
     dispatch(startRequest());
     try {
-
-      const postsPerPage = 10;
-
+     
       const startAt = (page - 1) * postsPerPage;
       const limit = postsPerPage;
 
@@ -111,20 +126,7 @@ export const loadPostsByPageRequest = (page) => {
   };
 };
 
-/* INITIAL STATE */
 
-const initialState = {
-  data: [],
-  request: {
-    pending: false,
-    error: null,
-    success: null,
-  },
-  singlePost: [],
-  amount: 0,
-  postsPerPage: 10,
-  presentPage: 1,
-};
 
 /* REDUCER */
 
