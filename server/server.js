@@ -3,6 +3,7 @@ const cors = require('cors');
 const config = require('./config');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
+const sanitize = require('mongo-sanitize')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/api', postRoutes);
 app.use(helmet());
+app.use((req) => sanitize(req.body));
 
 app.listen(config.PORT, function () {
     console.log('Server is running on port:', config.PORT);
