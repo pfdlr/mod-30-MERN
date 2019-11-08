@@ -3,7 +3,8 @@ const cors = require('cors');
 const config = require('./config');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
-const sanitize = require('mongo-sanitize')
+const sanitize = require('mongo-sanitize');
+const path = require('path');
 
 const app = express();
 
@@ -25,7 +26,14 @@ app.use(express.json());
 app.use('/api', postRoutes);
 app.use(helmet());
 app.use((req) => sanitize(req.body));
+app.use(express.static(path.join(__dirname, '/../client/build'))); // Serve static files from the React app
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/build/index.html'));
+});
 
 app.listen(config.PORT, function () {
     console.log('Server is running on port:', config.PORT);
 });
+
+
