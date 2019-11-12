@@ -1316,6 +1316,11 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+mongo-sanitize@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mongo-sanitize/-/mongo-sanitize-1.0.1.tgz#23fb7eb33a97bbfc8219e6f41a889a4b96c4a850"
+  integrity sha512-y18QHyoQomBPdv48F0pJfBByZXql056fcj+5cPZt9MbpR+d1kKaGYQ3tiKE3bZLWDHBuMr5djhlxGO0vEMp2/A==
+
 mongodb-core@3.2.5:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.2.5.tgz#08f9c78f44bba6a22d04fd3bce6bb257d82c7d35"
@@ -2222,6 +2227,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+
+uuid@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
