@@ -22,10 +22,13 @@ db.on('error', (err) => console.log('Error ' + err));
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use('/api', postRoutes);
 app.use(helmet());
-app.use((req) => sanitize(req.body));
+app.use((req, res, next) => {
+  sanitize(req.body);
+  next();
+});
 
+app.use('/api', postRoutes);
 app.listen(config.PORT, function () {
     console.log('Server is running on port:', config.PORT);
 });
