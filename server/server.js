@@ -39,5 +39,3 @@ app.use('/api', postRoutes);
 app.listen(config.PORT, function () {
     console.log('Server is running on port:', config.PORT);
 });
-
-

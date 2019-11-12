@@ -62,7 +62,7 @@ Posts.propTypes = {
 };
 
 Posts.defaultProps = {
-  initialPage: 2,
+  initialPage: 1,
   postsPerPage: 4,
   pagination: true,
 };
