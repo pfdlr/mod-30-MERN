@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_URL, BASE_URL } from '../config';
+import { BASE_URL, API_URL } from '../config';
 
 /* SELECTORS */
 export const getPosts = ({ posts }) => posts.data;
