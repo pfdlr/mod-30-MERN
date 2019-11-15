@@ -6,7 +6,7 @@ import PostSummary from '../PostSummary/PostSummary';
 const PostsList = ({ posts }) => (
   <div>
     <section className="posts-list">
-      {posts.reverse().map(post => <PostSummary key={post.id} {...post} />)}
+      {posts.map(post => <PostSummary key={post.id} {...post} />)}
     </section>
   </div>
 );
